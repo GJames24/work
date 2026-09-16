@@ -14,9 +14,9 @@ Counts as of 2026-09-14.
 
 | | |
 |---|---|
-| Engine | Python, ~50 modules, one continuous canon thread of 94 simulated days: one kept run per day, dead takes kept beside it |
+| Engine | Python, ~50 modules, one continuous thread of 94 simulated days (the first 74 canon, the rest lab days on the same lineage): one kept run per day, dead takes kept beside it |
 | Quality bar | The [Inspector](glossary.md#the-inspector) reads every run for contradictions between what residents said and what the world recorded; the bar for a canon day is zero critical findings, and every finding is dissected before the next day launches |
-| Instruments | 58 command-line tools: cost cards, event-log counters, reconciliation checks, the resident-behavior inspector |
+| Instruments | 59 command-line tools: cost cards, event-log counters, reconciliation checks, the resident-behavior inspector |
 | Regression bench | 626 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
 | Record | 1,127 commits, 284 dated milestones, 1,210 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
 | Runs | Every run, fork, aborted take and rehearsal kept forever with the engine's commit hash in its metadata |
