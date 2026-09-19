@@ -6,7 +6,7 @@ They will stay private. Curated public editions of parts of this work are planne
 
 | Project | One line | Page |
 |---|---|---|
-| **Tilda** | An agentic world simulation run like a scientific instrument: 94 simulated days on one canon thread, cost on every model call, a 626-check regression bench gating commits, and a weekly gathering the residents founded themselves | [tilda.md](tilda.md) |
+| **Tilda** | An agentic world simulation run like a scientific instrument: 94 simulated days on one canon thread, cost on every model call, a 629-check regression bench gating commits, and a weekly gathering the residents founded themselves | [tilda.md](tilda.md) |
 | **The Second Stamp** | Fine-tuning an open model to fill one of Tilda's seats: hand-authored sealed eval, hash-approved GPU runs, baseline-first evaluation | [the-second-stamp.md](the-second-stamp.md) |
 | **The Kitten Breeder** | The operating model extracted from Tilda: 27 rules, most paid for by a named failure, plus a starter kit for new projects | [the-kitten-breeder.md](the-kitten-breeder.md) |
 

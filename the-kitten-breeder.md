@@ -39,4 +39,4 @@ Most of what goes wrong with AI-assisted development is not the model. It is the
 
 ## Scale
 
-As of 2026-09-14: 48 commits, 27 chapters, one registered descendant project.
+As of 2026-09-18: 56 commits, 27 chapters, one registered descendant project.
