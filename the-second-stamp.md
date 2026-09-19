@@ -13,8 +13,8 @@ It is also a learning project by design. Phase 1 built a GPT-style model from sc
 Governance is where AI projects usually go wrong, so it is the part I built first and hold to hardest.
 
 - **Two agents, one channel.** The training repo is a clean room operated by a second coding agent on the GPU machine. It cannot see the simulation's data. The two repos talk only through dated review artifacts pushed in each direction (the [flap](glossary.md#the-flap)). Artifacts travel, data never does.
-- **Every authority is given by a human, per action, by name.** License acceptance, software install, weight download, GPU time, publication. Each is a separate word from me, and a GPU run is approved by the SHA-256 of its plan file. The runner refuses to start unless the approved hash matches the plan on disk and the code is pushed.
-- **Safety envelope on the hardware.** A watchdog samples VRAM every 5 s, stops the run on three consecutive breaches of a 1 GiB margin or a 900 s ceiling, hard-exits the process, and re-queries VRAM after the stop to prove the card was actually released. (That last step exists because one run held the card after reporting a stop.)
+- **Every authority is given by a human, per action, by name.** License acceptance, software install, weight download, GPU time, publication. Each is a separate word from me, and a GPU run is approved by the SHA-256 of its plan file, the [hash gate](glossary.md#the-hash-gate). The runner refuses to start unless the approved hash matches the plan on disk and the code is pushed.
+- **Safety envelope on the hardware.** A watchdog samples VRAM every 5 s, stops the run on three consecutive polls under 1 GiB free or a 900 s ceiling, hard-exits the process, and re-queries VRAM after the stop to prove the card was actually released. (That last step exists because one run held the card after reporting a stop.)
 - **The base model's license was read by me before the first download.**
 
 ## The data and the eval
@@ -29,17 +29,17 @@ Governance is where AI projects usually go wrong, so it is the part I built firs
 
   Constrained decoding hit the mechanical ceiling before any training. That finding moved the metric: contract compliance cannot separate models, so the next metric is agreement with the authored answer, then a [set of plausible answers](glossary.md#the-plausible-set), then a judged read of the saved development responses. A frontier model may act as a second grader; its scores never become training data.
 
-- **The registered rule tied; the pick was a ruling, recorded as one.** The pre-registered mechanical rule for choosing between the two ended in an unresolved tie. I then ruled for the 8B on measured serving cost (its memory-headroom check cleared in 18.8 s against 39.7 s; the same exam served in 70 s against 117 s) and on a full-precision adapter fitting the card. The record marks that as a post-hoc ruling, not the rule's output. The 14B, converted and [hashed](glossary.md#the-hash-gate), is reserved for a later round.
+- **The registered rule tied; the pick was a [ruling](glossary.md#a-ruling), recorded as one.** The pre-registered mechanical rule for choosing between the two ended in an unresolved tie. I then ruled for the 8B on measured serving cost (its memory-headroom check cleared in 18.8 s against 39.7 s; the same exam served in 70 s against 117 s) and on a full-precision adapter fitting the card. The record marks that as a post-hoc ruling, not the rule's output. The 14B, converted and [hashed](glossary.md#the-hash-gate), is reserved for a later round.
 
 ## Engineering decisions
 
 - **The context target was provisional and got re-ruled.** The plan assumed an 8,192-token training window. The sealed sheets are a few hundred tokens each. The window was cut to 2,048 and the loss computed in chunks with a detached-leaf backward pass (exact gradient, lower peak memory). Both models then cleared the headroom gate.
 - **One change per round, prediction filed before the result.** Round one is a LoRA on the 8B in BF16. The step count is a control variable (batch 4, 3 epochs, ~36 steps), not an accident of the batch size.
-- **Adverse results get sorted into a named bucket:** the model, the exam, or the [rig](glossary.md#the-rig-bucket) (a plan assumption meeting the hardware). The rig bucket has already caught two refusals that were not model problems.
+- **Adverse results get sorted into a named bucket:** the model, the exam, or the [rig](glossary.md#the-rig-bucket) (a plan assumption meeting the hardware). The rig bucket exists so that a plan assumption meeting the hardware is never filed as a model problem.
 
 ## Scale
 
-As of 2026-09-18: 195 commits, 114 source, tool and test files, 61 [quest-log](glossary.md#the-quest-log) entries, 63 review artifacts exchanged across the channel. All GPU runs so far are headroom checks and baselines; results and [receipts](glossary.md#a-receipt) are in the repo.
+As of 2026-09-19: 197 commits, 114 source, tool and test files, 61 [quest-log](glossary.md#the-quest-log) entries, 63 review artifacts exchanged across the channel. All GPU runs so far are headroom checks and baselines; results and [receipts](glossary.md#a-receipt) are in the repo.
 
 ## Industry terms this project exercises
 
