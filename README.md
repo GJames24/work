@@ -8,7 +8,9 @@ They will stay private. Curated public editions of parts of this work are planne
 |---|---|---|
 | **Tilda** | An agentic world simulation run like a scientific instrument: 94 simulated days on one canon thread, cost on every model call, a 629-check regression bench gating commits, and a weekly gathering the residents founded themselves | [tilda.md](tilda.md) |
 | **The Second Stamp** | Fine-tuning an open model to fill one of Tilda's seats: hand-authored sealed eval, hash-approved GPU runs, baseline-first evaluation | [the-second-stamp.md](the-second-stamp.md) |
-| **The Kitten Breeder** | The operating model extracted from Tilda: 27 rules, most paid for by a named failure, plus a starter kit for new projects | [the-kitten-breeder.md](the-kitten-breeder.md) |
+| **The Kitten Breeder** | The operating model extracted from Tilda: 27 chapters, most a rule paid for by a named failure, plus a starter kit for new projects | [the-kitten-breeder.md](the-kitten-breeder.md) |
+
+**Field notes** ([field-notes/](field-notes/README.md)): shorter pieces from inside Tilda, each a product decision, a provenance story or an engineering postmortem with its receipts. The first three: a line in every home, Ada and the Quarto, the mail carriers.
 
 The projects use their own vocabulary. The [glossary](glossary.md) maps it to industry terms.
 

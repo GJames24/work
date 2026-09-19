@@ -29,9 +29,9 @@ It is not software. It is a playbook, a starter kit, and a lineage register.
 | The [seats](glossary.md#a-hand-a-seat) | Route each job to the model tier that earned it in a trial, and keep the table; a seat moves up in price when the receipts say it earned it | Model routing, cost-aware orchestration |
 | The money | Cost on the row beside quality; a change is judged on what it bought for what it cost, never on either number alone | FinOps for LLM systems, cost-performance trade-offs on receipts |
 | Agents in harness | What an agent may and may not touch, and how it reports | Agent permissions and guardrails |
-| The [golden set](glossary.md#the-seal-the-gold) | A hand-authored eval, sealed with a never-trained holdout | Eval set governance, leakage prevention |
+| The [golden set](glossary.md#the-seal-the-gold) | A hand-authored eval, sealed with a never-trained [holdout](glossary.md#the-holdout) | Eval set governance, leakage prevention |
 
-The money and the seats are one rule read from two sides: the money says both numbers go on the row, and the seats say the routing decision reads them. That is how the same book can hold a cost pass that trimmed a day's spend and a ruling that moved one seat to a pricier model, each on its receipt.
+[The money and the seats](glossary.md#the-money-and-the-seats) are one rule read from two sides: the money says both numbers go on the row, and the seats say the routing decision reads them. That is how the same book can hold a cost pass that trimmed a day's spend and a [ruling](glossary.md#a-ruling) that moved one seat to a pricier model, each on its receipt.
 
 ## Why it matters for product work
 
@@ -39,4 +39,4 @@ Most of what goes wrong with AI-assisted development is not the model. It is the
 
 ## Scale
 
-As of 2026-09-18: 56 commits, 27 chapters, one registered descendant project.
+As of 2026-09-19: 57 commits, 27 chapters, one registered descendant project.

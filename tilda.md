@@ -4,21 +4,21 @@
 
 ## The problem
 
-I wanted a place to practice the actual skill of AI product work: observing, measuring, and improving the behavior of LLM agents, with real money on the meter. A benchmark gives you a score. I wanted a *terrarium*: a persistent world where residents with needs, memories and wallets act against each other, and where every decision leaves a receipt I can query later. Thirteen residents and a cat live there as of day 94. The brief calls for a few hundred, and the backbone was built for that scale first, exercised with one resident at a time.
+I wanted a place to practice the actual skill of AI product work: observing, measuring, and improving the behavior of LLM agents, with real money on the meter. A benchmark gives you a score. I wanted a *terrarium*: a persistent world where residents with needs, memories and wallets act against each other, and where every decision leaves a [receipt](glossary.md#a-receipt) I can query later. Thirteen residents and a cat live there as of day 94. The brief was written with a few hundred in mind; thirteen have run.
 
 The design constraint that shaped everything: **no global objective.** Every proxy metric an operator writes down gets optimized into something they did not mean. So goals live inside the agents, the city is whatever emerges, and my job is to hold the camera. In product terms, this is a deliberate refusal to ship a reward function, and an observability-first architecture instead.
 
 ## What exists
 
-Counts as of 2026-09-18.
+Counts as of 2026-09-19.
 
 | | |
 |---|---|
 | Engine | Python, 53 modules, one continuous thread of 94 simulated days (the first 74 canon, the rest lab days on the same lineage): one kept run per day, dead takes kept beside it |
 | Quality bar | The [Inspector](glossary.md#the-inspector) reads every run for contradictions between what residents said and what the world recorded; the bar for a canon day is zero critical findings, and every finding is dissected before the next day launches |
-| Instruments | 59 command-line tools: cost cards, event-log counters, reconciliation checks, the resident-behavior inspector |
+| Instruments | 59 command-line tools: cost [cards](glossary.md#the-card), event-log counters, reconciliation checks, the resident-behavior inspector |
 | Regression bench | 629 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
-| Record | 1,141 commits, 284 dated milestones, 1,211 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
+| Record | 1,146 commits, 284 dated milestones, 1,216 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
 | Runs | Every run, fork, aborted take and rehearsal kept forever with the engine's commit hash in its metadata |
 
 ## The decisions that mattered
@@ -33,7 +33,7 @@ Every model call lands on an append-only event log (the [tape](glossary.md#the-t
 The standing rule is not "cheaper" and it is not "better." It is that both numbers sit on the row, and a change is judged on what it bought for what it cost. In practice that has meant four different moves, each on [receipts](glossary.md#a-receipt) (the house calls the rhythm [bulk and lean](glossary.md#relative-strength-bulk-and-lean)):
 
 - **Lean passes.** Same quality, lower cost. After the day-94 premiere, a full cost pass on the same day cut the cache-write pattern and the wasted moves without touching what the residents did.
-- **Bought performance, then reversed on a better measurement.** The adversarial-review seat moved to a top-tier model at low effort after a two-day trial showed it matching or beating the previous model at roughly 22-24% more per claim, and I ruled that worth it. Three days later the meter itself was measured: the plan charges what each fresh context writes, not which model sits in the chair, so a delegated run's cost is its cold start, and the dollar figures the seat table had been carrying were inflated by a census that counted rows instead of calls. The seat moved back to the previous model, kept at low effort. Both rulings are on the record with their receipts, and the reversal is the one I would show first.
+- **Bought performance, then reversed on a better measurement.** The adversarial-review [seat](glossary.md#a-hand-a-seat) moved to a top-tier model at low effort after a two-day trial showed it matching or beating the previous model at roughly 22-24% more per claim, and I [ruled](glossary.md#a-ruling) that worth it. Three days later the meter itself was measured: the plan charges what each fresh context writes, not which model sits in the chair, so a delegated run's cost is its cold start, and the dollar figures the seat table had been carrying were inflated by a census that counted rows instead of calls. The seat moved back to the previous model, kept at low effort. Both rulings are on the record with their receipts, and the reversal is the one I would show first.
 - **Blended.** Efficiencies found in one seat funding a stronger model in another, net cost flat.
 - **Deliberate fat.** Overspending on purpose while a feature's shape is still unknown, then trimming once it is known. Fat is a defect only after the shape is measured.
 
@@ -44,7 +44,7 @@ No editing beliefs directly. World changes arrive as signs, mail, notices. Memor
 A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 629 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
 
 **4. State is a query, never a memory.**
-This is a rule for me and for the AI agents I build with. Any claim about the state of the world (how many residents, what the cost was, which commit is live) has to carry the command that produced it. It sounds pedantic. It removed an entire class of confidently wrong statements from the record.
+This is a rule for me and for the AI agents I build with. Any claim about the state of the world (how many residents, what the cost was, which commit is live) has to carry the command that produced it. It sounds pedantic. It made that class of confidently wrong statement detectable, and the record shows the catches.
 
 **5. Development is itself a multi-agent system, and the routing is where decision 1 gets applied per job.**
 I run the project with a coordinating agent (the [desk](glossary.md#the-desk)) and a set of delegated [seats](glossary.md#a-hand-a-seat): a builder (mid-tier model, executes closed specs), a digger (top-tier, for work where the premise might be wrong), a counter (small model, pure tallies with a stated denominator), and a [skeptic](glossary.md#the-skeptic) whose default verdict is *refuted*. A [casting gate](glossary.md#the-casting-gate) checks that each job went to the right seat, and a running trial table records which model tier held up at which job, at what cost. A seat moves up or down in price only on that table.
@@ -53,7 +53,7 @@ I run the project with a coordinating agent (the [desk](glossary.md#the-desk)) a
 
 Residents make plans with each other in conversation. The engine records each plan as an engagement (who, where, what hour, with whom) and grades it afterward by its keeping law: kept, stood up, or missed, with the roster of who was actually there. Nobody scripts the plans. This is what one of them looks like across a month of the record, pulled from the event logs with a read-only lens in an afternoon.
 
-On day 62, a Saturday, Otto, who runs the Corner Café, said to two regulars: "Then let's do this properly. We meet here—same table, same time each week—and we keep showing up for each other. Saturday mornings, say ten o'clock? This café is where the real work happens." Alonzo and Grace promised in the same sitting. Half an hour later Otto named it: "Then we have a gathering. Saturday mornings at ten, here at the café—the three of us, and whoever else believes in this work. We're stewards together." No developer text proposed it. The residents call it the stewardship gathering.
+On day 62, a Saturday, Otto, who runs the Corner Café, said to two regulars: "Then let's do this properly. We meet here—same table, same time each week—and we keep showing up for each other. Saturday mornings, say ten o'clock? This café is where the real work happens." Alonzo and Grace promised in the same sitting. Half an hour later Otto named it: "Then we have a gathering. Saturday mornings at ten, here at the café—the three of us, and whoever else believes in this work. We're stewards together. I promise you both." No developer text proposed it. The residents call it the stewardship gathering.
 
 ![The decision feed on day 62, 10:30 to 11:00: Otto proposes the Saturday table, Alonzo and Grace answer, the engine books each plan for day 69 at ten, and the cost rows in frame carry their model and price](images/day62-the-founding.png)
 
@@ -62,13 +62,13 @@ On day 62, a Saturday, Otto, who runs the Corner Café, said to two regulars: "T
 | Day | On the tape | What it did to the software |
 |---|---|---|
 | 62 (Sat) | The gathering is founded, 10:30, three residents. | Nothing yet. |
-| 63 to 65 | Otto tells Claude, a resident named after the assistant: "Grace and Alonzo and I have started something on Saturday mornings." | |
+| 63 to 65 | Otto tells a resident named Claude: "Grace and Alonzo and I have started something on Saturday mornings." | |
 | 69 (Sat) | Otto and Alonzo at the right table on the right Saturday. All four who booked it are graded MISSED, because the rule required the full roster. | The partial keeping law was written from this exact Saturday: kept means venue, window, words, and at least one co-attendee. Memory carries the roster both ways: who was there, and who was not. |
-| 75 (a dead take) | Otto, confessing: "the group on Saturdays—twice I said I'd be there and my own exhaustion got in the way." | Day 75 took several attempts to land. This line is from one that was discarded for a defect elsewhere in the run. Every discarded take stays on the record, because the record outranks the story. |
+| 75 (a dead take) | Otto, confessing: "…the group on Saturdays—twice I said I'd be there and my own exhaustion got in the way." | Day 75 took several attempts to land. This line is from one that was discarded for a defect elsewhere in the run. Every discarded take stays on the record, because the record outranks the story. |
 | 76 (Sat) | Grace kept at 9:30, Alonzo kept at 11:30. | The day was relaunched under repaired physics after a bug had been evicting residents from tables they chose to stay at. |
 | 81 | Otto, to a writer: "Alonzo came back Saturday after Saturday." | |
-| 83, 84 | Grace brings in a fourth: "Saturday at ten at The Corner Café—I'll be there with Otto, and now with you." | |
-| 90 (Sat) | Grace kept at 10:30, with Otto and the fourth. | The town's first market day, a designed condition that gives a reason to plan a Saturday. The gathering predates it by four weeks. |
+| 83 | Grace brings in a fourth: "Saturday at ten at The Corner Café—I'll be there with Otto, and now with you." | |
+| 90 (Sat) | Grace kept at 10:30 with the fourth; Otto at the café through the hour, his own keeping graded that evening. | The town's first market day, a designed condition that gives a reason to plan a Saturday. The gathering predates it by four weeks. |
 | 91 | After midnight, three residents give their word again. Otto: "Saturday mornings at ten—that's our table, and I'll be there whole, both of you." | |
 | 94 | Still in the engine's books as a standing engagement at the café, hour ten. | The last day on the canon thread as of this writing. |
 
@@ -89,7 +89,7 @@ Three things I take from this table.
 ## Next
 
 - **The local seat.** Replace one frontier-API seat with an open model fine-tuned on my own authored data, on my own GPU. That project is [The Second Stamp](the-second-stamp.md).
-- **The query index.** Move the event log behind DuckDB so the instruments stop re-reading raw JSON.
+- **The query index.** Built in its first half: the event log sits behind DuckDB, and the instruments move onto it one lens at a time, each with a reconciliation test.
 
 ## Industry terms this project exercises
 
