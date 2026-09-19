@@ -28,7 +28,7 @@ The reconciled summary of a day's run: calls, cost, anomalies, each number with 
 
 ### The bench, a law
 **Industry term:** regression suite; a test.
-626 named checks. Each law names the failure that created it.
+629 named checks. Each law names the failure that created it.
 
 ### The certificate
 **Industry term:** CI gate; pre-commit gate.

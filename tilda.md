@@ -10,15 +10,15 @@ The design constraint that shaped everything: **no global objective.** Every pro
 
 ## What exists
 
-Counts as of 2026-09-14.
+Counts as of 2026-09-18.
 
 | | |
 |---|---|
-| Engine | Python, ~50 modules, one continuous thread of 94 simulated days (the first 74 canon, the rest lab days on the same lineage): one kept run per day, dead takes kept beside it |
+| Engine | Python, 53 modules, one continuous thread of 94 simulated days (the first 74 canon, the rest lab days on the same lineage): one kept run per day, dead takes kept beside it |
 | Quality bar | The [Inspector](glossary.md#the-inspector) reads every run for contradictions between what residents said and what the world recorded; the bar for a canon day is zero critical findings, and every finding is dissected before the next day launches |
 | Instruments | 59 command-line tools: cost cards, event-log counters, reconciliation checks, the resident-behavior inspector |
-| Regression bench | 626 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
-| Record | 1,127 commits, 284 dated milestones, 1,210 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
+| Regression bench | 629 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
+| Record | 1,141 commits, 284 dated milestones, 1,211 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
 | Runs | Every run, fork, aborted take and rehearsal kept forever with the engine's commit hash in its metadata |
 
 ## The decisions that mattered
@@ -41,7 +41,7 @@ The standing rule is not "cheaper" and it is not "better." It is that both numbe
 No editing beliefs directly. World changes arrive as signs, mail, notices. Memory is amended, never overwritten. This made the simulation slower to build and much easier to trust: when a resident acts strangely, the cause is on the event log, not in a hidden write.
 
 **3. The [certificate](glossary.md#the-certificate): nothing touches tooling without a green bench.**
-A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 626 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
+A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 629 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
 
 **4. State is a query, never a memory.**
 This is a rule for me and for the AI agents I build with. Any claim about the state of the world (how many residents, what the cost was, which commit is live) has to carry the command that produced it. It sounds pedantic. It removed an entire class of confidently wrong statements from the record.
