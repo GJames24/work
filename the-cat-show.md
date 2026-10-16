@@ -2,7 +2,7 @@
 
 **Status:** in progress, October 2026.
 
-Tilda produces gradeable days: a town of residents thinks on the wire, and every thought, act and dollar lands on a [tape](glossary.md#the-tape-the-loom). [The Stray Cat](glossary.md#the-stray-cat), Tilda's own examiner, already grades those days against hundreds of named checks. [The Cat Show](glossary.md#the-cat-show) turns that machinery outward: it enters a model into each of the [seats](glossary.md#a-hand-a-seat) the work demands and asks how well, and at what price, it does the job.
+Tilda produces gradeable days: a town of residents thinks on the wire, and every thought, act and dollar lands on a [tape](glossary.md#the-tape-the-loom). [The Stray Cat](glossary.md#the-stray-cat), Tilda's own examiner, already grades those days. [The Cat Show](glossary.md#the-cat-show) turns that machinery outward: it enters a model into each of the [seats](glossary.md#a-hand-a-seat) the work demands and asks how well, and at what price, it does the job.
 
 The seats are jobs, not prompts. A reader walks one dimension of a day's tape and files every claim with its rows and its denominator. A [skeptic](glossary.md#the-skeptic) takes one claim and tries to refute it. A [referee](glossary.md#a-referee) re-grades a blind sample with every verdict stripped. A builder executes a hardened spec. Each seat has a written standard, and each model's work is judged against it by a referee.
 
