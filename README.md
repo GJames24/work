@@ -1,8 +1,6 @@
 # Work in progress: four case studies
 
-I build software with AI agents in the evenings, and I treat it as a product practice: measured cost, sealed evals, decision records, and regression checks born from real failures. The repositories are private while in active development. This repo describes them.
-
-They will stay private. Curated public editions of parts of this work are planned, and [planmeter](https://github.com/GJames24/planmeter) is the first.
+I build software with AI agents in the evenings, and I treat it as a product practice: measured cost, sealed evals, decision records, and regression checks born from real failures. The repositories themselves are private; this repo is their public record. Curated public editions of parts of this work are planned, and [planmeter](https://github.com/GJames24/planmeter) is the first.
 
 | Project | One line | Page |
 |---|---|---|
