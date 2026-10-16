@@ -4,21 +4,21 @@
 
 ## The problem
 
-I wanted a place to practice the actual skill of AI product work: observing, measuring, and improving the behavior of LLM agents, with real money on the meter. A benchmark gives you a score. I wanted a *terrarium*: a persistent world where residents with needs, memories and wallets act against each other, and where every decision leaves a [receipt](glossary.md#a-receipt) I can query later. Thirteen residents and a cat live there as of day 94. The brief was written with a few hundred in mind; thirteen have run.
+I wanted a place to practice the actual skill of AI product work: observing, measuring, and improving the behavior of LLM agents, with real money on the meter. A benchmark gives you a score. I wanted a *terrarium*: a persistent world where residents with needs, memories and wallets act against each other, and where every decision leaves a [receipt](glossary.md#a-receipt) I can query later. Fourteen residents and a cat live there as of day 101, the last paid day; the experimental arms reach day 102 in a free rehearsal. The brief was written with a few hundred in mind; fourteen have run.
 
 The design constraint that shaped everything: **no global objective.** Every proxy metric an operator writes down gets optimized into something they did not mean. So goals live inside the agents, the city is whatever emerges, and my job is to hold the camera. In product terms, this is a deliberate refusal to ship a reward function, and an observability-first architecture instead.
 
 ## What exists
 
-Counts as of 2026-09-19.
+Counts as of 2026-10-16.
 
 | | |
 |---|---|
-| Engine | Python, 53 modules, one continuous thread of 94 simulated days (the first 74 canon, the rest lab days on the same lineage): one kept run per day, dead takes kept beside it |
+| Engine | Python, 53 modules, one canon thread of 74 days and simulated days reaching day 102 across its [experimental arms](glossary.md#the-trunk-an-arm): one kept run per day on each arm, dead takes kept beside it |
 | Quality bar | The [Inspector](glossary.md#the-inspector) reads every run for contradictions between what residents said and what the world recorded; the bar for a canon day is zero critical findings, and every finding is dissected before the next day launches |
-| Instruments | 59 command-line tools: cost [cards](glossary.md#the-card), event-log counters, reconciliation checks, the resident-behavior inspector |
-| Regression bench | 629 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
-| Record | 1,146 commits, 284 dated milestones, 1,216 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
+| Instruments | 65 command-line tools: cost [cards](glossary.md#the-card), event-log counters, reconciliation checks, the resident-behavior inspector |
+| Regression bench | 670 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
+| Record | 1,346 commits, 284 dated milestones, 1,334 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
 | Runs | Every run, fork, aborted take and rehearsal kept forever with the engine's commit hash in its metadata |
 
 ## The decisions that mattered
@@ -41,7 +41,7 @@ The standing rule is not "cheaper" and it is not "better." It is that both numbe
 No editing beliefs directly. World changes arrive as signs, mail, notices. Memory is amended, never overwritten. This made the simulation slower to build and much easier to trust: when a resident acts strangely, the cause is on the event log, not in a hidden write.
 
 **3. The [certificate](glossary.md#the-certificate): nothing touches tooling without a green bench.**
-A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 629 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
+A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 670 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
 
 **4. State is a query, never a memory.**
 This is a rule for me and for the AI agents I build with. Any claim about the state of the world (how many residents, what the cost was, which commit is live) has to carry the command that produced it. It sounds pedantic. It made that class of confidently wrong statement detectable, and the record shows the catches.
@@ -70,7 +70,7 @@ On day 62, a Saturday, Otto, who runs the Corner Café, said to two regulars: "T
 | 83 | Grace brings in a fourth: "Saturday at ten at The Corner Café—I'll be there with Otto, and now with you." | |
 | 90 (Sat) | Grace kept at 10:30 with the fourth; Otto at the café through the hour, his own keeping graded that evening. | The town's first market day, a designed condition that gives a reason to plan a Saturday. The gathering predates it by four weeks. |
 | 91 | After midnight, three residents give their word again. Otto: "Saturday mornings at ten—that's our table, and I'll be there whole, both of you." | |
-| 94 | Still in the engine's books as a standing engagement at the café, hour ten. | The last day on the canon thread as of this writing. |
+| 94 | Still in the engine's books as a standing engagement at the café, hour ten. | The last day on the lineage when this table was pulled; the canon thread ends at day 74 and days 75 on are lab days on the same thread. |
 
 *Source: a read-only lens over every run's event log, matching spoken lines on "Saturday" and "ten" and every engagement at the café at hour ten. Runs quoted: live-20260717-195737 (day 62), live-20260717-214651 (day 64), live-20260719-003910 (day 69), lab-20260728-115542 (the day-75 outtake), lab-20260806-152525 (day 76), lab-20260816-133200 (day 81), lab-20260821-123106 and lab-20260822-160258 (days 83 and 84), lab-20260830-060017 (day 90), lab-20260903-025737 (day 91), lab-20260907-163044 (day 94). Each row quotes the take kept as that day's record, except day 75, which quotes a discarded take and says so. Resident lines are quoted verbatim.*
 

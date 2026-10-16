@@ -39,7 +39,7 @@ Governance is where AI projects usually go wrong, so it is the part I built firs
 
 ## Scale
 
-As of 2026-09-19: 197 commits, 114 source, tool and test files, 61 [quest-log](glossary.md#the-quest-log) entries, 63 review artifacts exchanged across the channel. All GPU runs so far are headroom checks and baselines; results and [receipts](glossary.md#a-receipt) are in the repo.
+As of 2026-10-16: 221 commits, 130 source, tool and test files, 71 [quest-log](glossary.md#the-quest-log) entries, 69 review artifacts exchanged across the channel. All GPU runs so far are headroom checks and baselines; results and [receipts](glossary.md#a-receipt) are in the repo.
 
 ## Industry terms this project exercises
 

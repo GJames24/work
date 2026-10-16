@@ -28,7 +28,7 @@ The reconciled summary of a day's run: calls, cost, anomalies, each number with 
 
 ### The bench, a law
 **Industry term:** regression suite; a test.
-629 named checks. Each law names the failure that created it.
+670 named checks. Each law names the failure that created it.
 
 ### The certificate
 **Industry term:** CI gate; pre-commit gate.
@@ -113,3 +113,19 @@ Nothing from the simulation's logs crosses into the training project; only count
 ### The hash gate
 **Industry term:** change approval by content hash.
 A GPU run starts only if the approved SHA-256 matches the plan on disk and the code is pushed.
+
+### The trunk, an arm
+**Industry term:** baseline lineage; ablation branch.
+The canon thread is the trunk: the reference lineage of Tilda days. An arm forks from it, declares its parent and changes one variable, so any difference in its results has one candidate cause.
+
+### The Stray Cat
+**Industry term:** test harness; examiner.
+Tilda's own examiner: the detectors that turn a day's tape into an exam, reading what residents said against what the world recorded.
+
+### A referee
+**Industry term:** blind re-grading; inter-rater check.
+A grader that re-scores a sample of another grader's work with the original verdicts stripped, so agreement is measured and not assumed.
+
+### The Cat Show
+**Industry term:** model benchmark; leaderboard with provenance.
+The benchmark built on Tilda: models are entered into the seats the work demands, judged blind against written standards, and every verdict traces to a trial folder on disk. The case study is [the-cat-show.md](the-cat-show.md).
