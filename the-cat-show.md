@@ -8,4 +8,4 @@ The seats are jobs, not prompts. A reader walks one dimension of a day's tape an
 
 Two rules shape every show. One variable per [arm](glossary.md#the-trunk-an-arm): a trial changes one thing and compares against a sibling run that changed nothing. And every number has a source file: the show's dashboard withholds any figure it cannot trace to a trial folder on disk, so a stale page shows a blank rather than a wrong number.
 
-The first show is Opus 5 against Opus 5.5 across the post-run seats. The published results are in progress and will appear here with their [receipts](glossary.md#a-receipt).
+The first show is Opus 5 against Opus 5.5 across the seats. The published results are in progress and will appear here with their [receipts](glossary.md#a-receipt).
