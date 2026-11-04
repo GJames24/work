@@ -4,21 +4,21 @@
 
 ## The problem
 
-I wanted a place to practice the actual skill of AI product work: observing, measuring, and improving the behavior of LLM agents, with real money on the meter. A benchmark gives you a score. I wanted a *terrarium*: a persistent world where residents with needs, memories and wallets act against each other, and where every decision leaves a [receipt](glossary.md#a-receipt) I can query later. Fourteen residents and a cat live there as of day 101, the last paid day; the experimental arms reach day 102 in a free rehearsal. The brief was written with a few hundred in mind; fourteen have run.
+I wanted a place to practice the actual skill of AI product work: observing, measuring, and improving the behavior of LLM agents, with real money on the meter. A benchmark gives you a score. I wanted a *terrarium*: a persistent world where residents with needs, memories and wallets act against each other, and where every decision leaves a [receipt](glossary.md#a-receipt) I can query later. Fourteen residents and a cat live there as of the newest paid run; the experimental arms reach day 102, which was paid once, on October 11. The brief was written with a few hundred in mind; fourteen have run.
 
 The design constraint that shaped everything: **no global objective.** Every proxy metric an operator writes down gets optimized into something they did not mean. So goals live inside the agents, the city is whatever emerges, and my job is to hold the camera. In product terms, this is a deliberate refusal to ship a reward function, and an observability-first architecture instead.
 
 ## What exists
 
-Counts as of 2026-10-16.
+Counts as of 2026-11-03 (the bench count as of 2026-11-02).
 
 | | |
 |---|---|
 | Engine | Python, 53 modules, one canon thread of 74 days and simulated days reaching day 102 across its [experimental arms](glossary.md#the-trunk-an-arm): one kept run per day on each arm, dead takes kept beside it |
 | Quality bar | The [Inspector](glossary.md#the-inspector) reads every run for contradictions between what residents said and what the world recorded; the bar for a canon day is zero critical findings, and every finding is dissected before the next day launches |
 | Instruments | 65 command-line tools: cost [cards](glossary.md#the-card), event-log counters, reconciliation checks, the resident-behavior inspector |
-| Regression bench | 670 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
-| Record | 1,346 commits, 284 dated milestones, 1,334 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
+| Regression bench | 673 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
+| Record | 1,411 commits, 284 dated milestones, 1,343 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
 | Runs | Every run, fork, aborted take and rehearsal kept forever with the engine's commit hash in its metadata |
 
 ## The decisions that mattered
@@ -41,13 +41,13 @@ The standing rule is not "cheaper" and it is not "better." It is that both numbe
 No editing beliefs directly. World changes arrive as signs, mail, notices. Memory is amended, never overwritten. This made the simulation slower to build and much easier to trust: when a resident acts strangely, the cause is on the event log, not in a hidden write.
 
 **3. The [certificate](glossary.md#the-certificate): nothing touches tooling without a green bench.**
-A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 670 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
+A pre-commit gate refuses any commit touching the tools directory until the full bench has run fresh and green. Each of the 673 checks names the failure that created it. Periodically I run a [groom](glossary.md#a-groom): an audit of the detectors themselves, because a check nobody has watched go red is not evidence.
 
 **4. State is a query, never a memory.**
 This is a rule for me and for the AI agents I build with. Any claim about the state of the world (how many residents, what the cost was, which commit is live) has to carry the command that produced it. It sounds pedantic. It made that class of confidently wrong statement detectable, and the record shows the catches.
 
 **5. Development is itself a multi-agent system, and the routing is where decision 1 gets applied per job.**
-I run the project with a coordinating agent (the [desk](glossary.md#the-desk)) and a set of delegated [seats](glossary.md#a-hand-a-seat): a builder (mid-tier model, executes closed specs), a digger (top-tier, for work where the premise might be wrong), readers (lenses over a day's tape: find what nobody has named, each claim filed with the rows behind it), a counter (the builder's model at low effort, pure tallies with a stated denominator), and a [skeptic](glossary.md#the-skeptic) whose default verdict is *refuted*. A [casting gate](glossary.md#the-casting-gate) checks that each job went to the right seat, and a running trial table records which model tier held up at which job, at what cost. A seat moves up or down in price only on that table.
+I run the project with a coordinating agent (the [desk](glossary.md#the-desk)) and a set of delegated [seats](glossary.md#a-hand-a-seat): a builder (mid-tier model, executes closed specs), a digger (top-tier, for work where the premise might be wrong), readers (lenses over a day's tape: find what nobody has named, each claim filed with the rows behind it), a counter (the builder's model at low effort, pure tallies with a stated denominator), and a [skeptic](glossary.md#the-skeptic) whose default verdict is *refuted*. A [casting gate](glossary.md#the-casting-gate) checks that each job went to the right seat, and a running table records which model tier held up at which job, at what cost. The review seats move only on a trial row; the build seats move with each model release and are measured on their own receipts.
 
 ## A worked example: the Saturday table
 
@@ -78,7 +78,7 @@ Three things I take from this table.
 
 - **The tradition is the residents'.** In the 2023 generative-agents paper, the famous party was seeded by the researchers and the emergent part was how word of it spread. No developer text proposed this one. The developer-event log for the day-62 run holds the standard casting rows, which seed each resident's values and job, and the day's run note logged as a developer row; nothing in it proposes a gathering, a standing table, or a weekly anything. An earlier take that day had leaked its run note into the town as a public notice and was discarded as an outtake for it; the founding happened in the clean take.
 - **The instruments were shaped by it.** The keeping law, the flare that fires when a plan's window closes unkept, and the memory roster were all written in response to what this gathering exposed. The residents' failures were the bug reports.
-- **The lens found something it was not built for.** Pulling this table surfaced that the residents speak the vow as weekly while the engine sometimes books it on a Tuesday and grades it missed. That is now an open question in the quest log, with the camera to be built before any fix. It is the most common way this project finds defects: a read taken for one reason answers another.
+- **The lens ran into something it was not built for.** Pulling this table surfaced that the residents speak the vow as weekly, a cadence the engine has no field for, and it ran into a booking defect the record already held. Both are open in the quest log; the detector came first, a camera built on September 16, and the fix has not landed. It is the most common way this project finds defects: a read taken for one reason answers another.
 
 ## What I learned that transfers
 

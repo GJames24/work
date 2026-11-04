@@ -12,7 +12,7 @@ It is not software. It is a playbook, a starter kit, and a lineage register.
 
 - **The book:** 27 chapters plus a foreword and closing. Most chapters are a rule that was paid for by a specific failure and cite its [receipt](glossary.md#a-receipt) (the commit, the run, the date); a few are procedures, and say so. Rules are amended forward-only; nothing is rewritten to look wiser than it was.
 - **The genesis kit:** the starter files a new project copies on day one: the map (a short, read-first project file), the [quest journal](glossary.md#the-quest-log) and its CLI, a [bench](glossary.md#the-bench-a-law) skeleton, the daily [card](glossary.md#the-card), pre-commit hooks, the money ledger, the rituals. Versioned, with a changelog.
-- **Two birth modes.** A software project reads the book live and contributes back by pull request. A model-training project is born as a sealed clean room stocked by the parent project's coordinating agent, with receipts flowing back through an outbox. One project has been born this way: [The Second Stamp](the-second-stamp.md).
+- **Two birth modes.** A software project reads the book live and contributes back by pull request. The other projects are born by assisted birth: stocked by the founding project's coordinating agent, with receipts returning through an outbox. The model-training one, [The Second Stamp](the-second-stamp.md), is the only one whose working agent has no access to the breeder or to Tilda at all.
 - **Written for agents as much as people.** Each mechanism is described by function before implementation, with translation notes so an agent working in a different tool can decide what the mechanism should *be* in its environment.
 
 ## A sample of the rules, in industry terms
@@ -26,7 +26,7 @@ It is not software. It is a playbook, a starter kit, and a lineage register.
 | Every cure ships its [camera](glossary.md#a-camera) | A fix ships the detector that would have caught it, proven red first | Regression tests, proven failing before the fix |
 | The bench | The check suite gates commits; a green bench nobody watched is not evidence | CI gate, test-suite audits |
 | The [groom](glossary.md#a-groom) | Periodically audit the detectors, not the product | Test-suite maintenance as scheduled work |
-| The [seats](glossary.md#a-hand-a-seat) | Route each job to the model tier that earned it in a trial, and keep the table; a seat moves up in price when the receipts say it earned it | Model routing, cost-aware orchestration |
+| The [seats](glossary.md#a-hand-a-seat) | Route each review job to the model tier that earned it in a trial, move the build seats with each model release measured on their own receipts, and keep the table | Model routing, cost-aware orchestration |
 | The money | Cost on the row beside quality; a change is judged on what it bought for what it cost, never on either number alone | FinOps for LLM systems, cost-performance trade-offs on receipts |
 | Agents in harness | What an agent may and may not touch, and how it reports | Agent permissions and guardrails |
 | The [golden set](glossary.md#the-seal-the-gold) | A hand-authored eval, sealed with a never-trained [holdout](glossary.md#the-holdout) | Eval set governance, leakage prevention |
@@ -39,4 +39,4 @@ Most of what goes wrong with AI-assisted development is not the model. It is the
 
 ## Scale
 
-As of 2026-10-16: 65 commits, 27 chapters, three registered descendant projects.
+As of 2026-11-02: 89 commits, 27 chapters. As of 2026-10-16, three registered descendant projects.

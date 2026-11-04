@@ -8,7 +8,7 @@ The coordinating AI session that plans, delegates, verifies, and commits. I dire
 
 ### A hand, a seat
 **Industry term:** delegated agent; model routing.
-A hand is a sub-agent cast for one job. A seat is the job itself, with the model tier and effort level that has held up at it in a trial.
+A hand is a sub-agent cast for one job. A seat is the job itself, with the model tier and effort level the house has ruled for it: a trial for the review seats, the current release for the build seats.
 
 ### The casting gate
 **Industry term:** routing policy check.
@@ -28,7 +28,7 @@ The reconciled summary of a day's run: calls, cost, anomalies, each number with 
 
 ### The bench, a law
 **Industry term:** regression suite; a test.
-670 named checks. Each law names the failure that created it.
+673 named checks. Each law names the failure that created it.
 
 ### The certificate
 **Industry term:** CI gate; pre-commit gate.
@@ -129,3 +129,31 @@ A grader that re-scores a sample of another grader's work with the original verd
 ### The Cat Show
 **Industry term:** model benchmark; leaderboard with provenance.
 The benchmark built on Tilda: models are entered into the seats the work demands, judged blind against written standards, and every verdict traces to a trial folder on disk. The case study is [the-cat-show.md](the-cat-show.md).
+
+### A referee sitting
+**Industry term:** blind external review; independent verification.
+One fresh session of a reviewer from a different model family than the author, over a copy of the repository at the exact revision under review. It sees the evidence and the request, never the working conversation or anyone's earlier verdict, re-derives each sampled claim itself, and returns a verdict per row. A tool reads the sitting's own log afterwards and refuses it if any file access left its sealed folder. The return is advisory until I merge it.
+
+### The review gate
+**Industry term:** branch protection; required status checks; pull-request admission.
+The main branch is the record. A repository ruleset is configured to refuse any change to it that does not arrive as a pull request with a passing automated check. By rule the merge is mine and never an agent's; the ruleset enforces the path, not whose hand clicks.
+
+### The fence (research rooms)
+**Industry term:** data boundary enforced in CI.
+What may never enter a research repository: logs or transcripts from my other projects, credentials, absolute paths, host names, personal addresses, session identifiers. A check runs on every push over the tree and every commit's author identity, and a red check is set to hold the merge; the refusal has not yet been drilled.
+
+### A case
+**Industry term:** study; experiment protocol with a closeout.
+One research question run to a close: commissioned, arms frozen, builds with forecasts filed before they run, independent reads, a close page with a pointer behind every sentence, a referee sitting, and a dated record entry.
+
+### An arm (research cases)
+**Industry term:** experimental arm; ablation.
+One configuration in a case, listed and frozen before any data is drawn, differing from the arm it is compared with by one setting.
+
+### Discovery, graduation
+**Industry term:** exploratory versus confirmatory analysis; preregistration.
+A result measured on inputs the method was tuned on is discovery and is labelled so. Graduation is the confirmatory step: a fresh set drawn once by a rule fixed in advance, then a referee sitting.
+
+### The genesis kit
+**Industry term:** project template; shared tooling, versioned.
+The starter files and fixtures a new project copies from the Kitten Breeder (the map, the record, the rituals, and in the research repositories the referee's tools, the fence and the merge page). It is versioned, and a project takes a new version only by pull request.
