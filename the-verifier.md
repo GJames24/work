@@ -22,7 +22,7 @@ Every mechanism below is named by what it refuses.
 
 ## What exists
 
-- **Two [cases](glossary.md#a-case) in the record, and a third staged.** A case is one research question run to a close. The full lifecycle, as the third case ran it: the case is commissioned; its [arms](glossary.md#an-arm-research-cases) are listed and frozen before any draw, each arm after the first changing one setting from the arm before it; each build lands as a numbered page with its forecast filed before it runs and graded after; several seats read the build's output pages independently; a close page states the candidate results with a pointer behind every sentence; a referee sits over that page from outside; the author answers each finding before anything is fixed; and the record entry lands by pull request. The third case was run outside the repository, in the desk's own working folder, and closed on October 30; its referee return, a first dry run of the new referee sitting, sealed by hand and then by the new tooling once it landed, is staged for my merge. A return moves nothing until merged, so its grades are not on this page yet.
+- **Three [cases](glossary.md#a-case) in the record.** A case is one research question run to a close. The full lifecycle, as the third case ran it: the case is commissioned; its [arms](glossary.md#an-arm-research-cases) are listed and frozen before any draw, each arm after the first changing one setting from the arm before it; each build lands as a numbered page with its forecast filed before it runs and graded after; several seats read the build's output pages independently; a close page states the candidate results with a pointer behind every sentence; a referee sits over that page from outside; the author answers each finding before anything is fixed; and the record entry lands by pull request. The third case was run outside the repository, in the desk's own working folder, and closed on October 30; its record entries landed by pull request between November 5 and November 7; its referee return, a first dry run of the new referee sitting, sealed by hand and then by the new tooling once it landed, is staged for my merge. A return moves nothing until merged, so its grades are not on this page yet.
 - **Referee returns in the record:** 2, grading 85 sampled rows of OpenAI-authored evidence: 78 supported in scope, 3 refiled, 2 not shown, 2 not completed.
 - **The [genesis kit](glossary.md#the-genesis-kit)**, version 4.8: the referee's fixtures, the fence, the merge page and the rituals, copied in from the breeder and refreshed only by pull request.
 
@@ -32,7 +32,7 @@ No result on P versus NP, the Riemann hypothesis or any other open problem. No c
 
 ## Scale
 
-As of 2026-11-02: 76 commits, 19 merged pull requests, 2 referee returns in the record, 0 admitted claims, kit version 4.8.
+As of 2026-11-08: 94 commits, 28 merged pull requests, 2 referee returns in the record, 0 admitted claims, kit version 4.8.
 
 ## Industry terms this project exercises
 

@@ -10,7 +10,7 @@ The design constraint that shaped everything: **no global objective.** Every pro
 
 ## What exists
 
-Counts as of 2026-11-03 (the bench count as of 2026-11-02).
+Counts as of 2026-11-08 (the bench count as of 2026-11-02).
 
 | | |
 |---|---|
@@ -18,7 +18,7 @@ Counts as of 2026-11-03 (the bench count as of 2026-11-02).
 | Quality bar | The [Inspector](glossary.md#the-inspector) reads every run for contradictions between what residents said and what the world recorded; the bar for a canon day is zero critical findings, and every finding is dissected before the next day launches |
 | Instruments | 65 command-line tools: cost [cards](glossary.md#the-card), event-log counters, reconciliation checks, the resident-behavior inspector |
 | Regression bench | 673 named checks (the [laws](glossary.md#the-bench-a-law)), each born from a specific failure, gating every commit that touches tooling |
-| Record | 1,411 commits, 284 dated milestones, 1,343 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
+| Record | 1,426 commits, 284 dated milestones, 1,343 [quest-log](glossary.md#the-quest-log) entries (every question worth understanding, whether it ended in code or a confirmation) |
 | Runs | Every run, fork, aborted take and rehearsal kept forever with the engine's commit hash in its metadata |
 
 ## The decisions that mattered

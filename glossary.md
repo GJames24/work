@@ -116,7 +116,7 @@ A GPU run starts only if the approved SHA-256 matches the plan on disk and the c
 
 ### The trunk, an arm
 **Industry term:** baseline lineage; ablation branch.
-The canon thread is the trunk: the reference lineage of Tilda days. An arm forks from it, declares its parent and changes one variable, so any difference in its results has one candidate cause.
+The canon thread is the trunk: the reference lineage of Tilda days. An arm forks from it, declares its parent and changes one variable (a replication arm changes nothing, to measure how far one run moves), so any difference in its results has one candidate cause.
 
 ### The Stray Cat
 **Industry term:** test harness; examiner.
@@ -124,7 +124,7 @@ Tilda's own examiner: the detectors that turn a day's tape into an exam, reading
 
 ### A referee
 **Industry term:** blind re-grading; inter-rater check.
-A grader that re-scores a sample of another grader's work with the original verdicts stripped, so agreement is measured and not assumed.
+A grader that re-scores a sample of another grader's work (or the whole set, where the study says so) with the original verdicts stripped, so agreement is measured and not assumed.
 
 ### The Cat Show
 **Industry term:** model benchmark; leaderboard with provenance.
@@ -157,3 +157,37 @@ A result measured on inputs the method was tuned on is discovery and is labelled
 ### The genesis kit
 **Industry term:** project template; shared tooling, versioned.
 The starter files and fixtures a new project copies from the Kitten Breeder (the map, the record, the rituals, and in the research repositories the referee's tools, the fence and the merge page). It is versioned, and a project takes a new version only by pull request.
+
+*added 2026-11-08 for the Cat Show's first study*
+
+### Model
+**Industry term:** system under test; model under evaluation.
+A language model under test, named on the page by its family and release.
+
+### Dial
+**Industry term:** reasoning-effort setting; inference-time compute level.
+The effort setting a model runs at, from low to max: how much reasoning it may spend on a task.
+
+### Seat and chair
+**Industry term:** task role and the configuration seated in it.
+A seat is a job the exam demands, and a chair is the model and dial seated in it.
+
+### Cell
+**Industry term:** experimental condition; one cell of a results grid.
+One model at one dial in one seat, to which every figure in a table or on a figure's row belongs.
+
+### Claim
+**Industry term:** finding; reported item.
+A finding the reader files: a defect, an all-clear, or another kind.
+
+### Plant
+**Industry term:** seeded control row; blindness probe.
+A row mixed in among the claims a chair grades, planted so the chair's blindness can be measured.
+
+### Held and distinct held
+**Industry term:** upheld finding; deduplicated true positive.
+Held has three senses, in the order the page meets them: in the skeptic's cut, a row the skeptic chair confirmed as a defect; on the referee screens, a defect a blind referee upheld against the record; and on the skeptic seat, a refusal the referee upheld. Distinct held counts the different defects among the referees' held rows, each once, however many claims name it.
+
+### Cache-write token
+**Industry term:** metered compute unit; billable cache write.
+The unit a plan meters and charges, a token written to the model's cache, in which every cost on the page is counted or in the list dollars it cost.
