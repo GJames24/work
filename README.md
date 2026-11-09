@@ -2,6 +2,8 @@
 
 I build software with AI agents in the evenings, and I treat it as a product practice: measured cost, sealed evals, decision records, and regression checks born from real failures. The repositories themselves are private; this repo is their public record. Curated public editions of parts of this work are planned, and [planmeter](https://github.com/GJames24/planmeter) is the first.
 
+Since September 20, every push to this repository has been checked first: a separate reviewer agent tries to refute the claims being published, the result goes into a ledger against the exact commit, and a pre-push hook in my working copy refuses a push without a pass. The first skeptic passes, one per public repository on September 19, refuted claims across my public pages, some of them on pages that had been published for five days.
+
 | Project | One line | Page |
 |---|---|---|
 | **Tilda** | An agentic world simulation run like a scientific instrument: one canon thread of 74 days and simulated days reaching day 102 across its [experimental arms](glossary.md#the-trunk-an-arm), cost on every model call, a 673-check regression bench gating commits, and a weekly gathering the residents founded themselves | [tilda.md](tilda.md) |
